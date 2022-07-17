@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/9dd5b43ce8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/project.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>THE WEATHER IS NOW <br> <div class= "additional">...so the life is...</div></h1>
+      <br>
+<form id="city-search">
+  <div class="row">
+  <div class="col-4">
+        <input 
+        type="search" 
+        id="city-input" 
+        placeholder="Enter the city"
+        autofocus="on"
+        autocomplete="off"
+        class="form-control shadow-sm" />
+  </div>
+  <div class="col-2">
+        <button 
+        type="submit" 
+        value="Let's find" 
+        class="form-control btn btn-info shadow-sm">Let's find
+      </button>
+      </div>
+      <div class="col-3">
+        <button 
+        class="btn btn-outline-info shadow-sm w-90" 
+        id="current-location-button">Current</button>
+      </div>
+      </form>
+<img src="images/window.jpeg" alt="window view" width="580px" class="main-image"/>
+<br>
+<div class="dataContainer">
+<div class="myCity">
+   <h2 id="city"></h2>
+   <h3 id="time"></h3>
+</div>   
+  <div class="cityData">
+   <h5><b>TEMPERATURE: <span id="temp-day">21</span>° /
+    <span id="temp-night">15</span>°
+     <a href="#" id="celcius-link">C</a> /
+     <a href="#" id="fahrenheit-link">F</a></b></h5>
+    <p><img src="icons/temperature.png" width="40px"> </p> 
+  </div>
+  <div class="cityData">
+    <h5> <b>SKY</b>:<br> <span id="sky"> </span></h5>
+    <p>   <img src="icons/sun.gif" width="40px"> </p>
+</div>
+<div class="cityData">
+    <h5> <b>WIND: </b>:<br> <span id="wind"></span> km/h</h5>
+    <img src="icons/wind.gif" width="40px">
+  </div>
+  <div class="cityData">
+    <h5> <b>HUMIDITY: </b><br> <span id="precipation"></span>%</h5>
+    <img src="icons/humid.png" width="43px">
+</div>
+</div>
+      <div class="row">
+        <div class="col-2">
+              <div class="card">
+                <h5> <b>Sunday</b></h5>
+                <img src="icons/thunder.png" class="card-img-top"/>
+                <div class="card-body">
+                  <p class="card-text"><b>25°C</b></p>
+                <a href="#" class="btn btn-info">Check it</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+           <h5> <b>Monday</b></h5>
+<img src="icons/clouds.png" class="card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><b>18°C</b></p>
+                  <a href="#" class="btn btn-info">Check it</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+              <h5><b>Tuesday</b> </h5>
+<img src="icons/raining.png" class="card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><b>21°C</b></p>
+                  <a href="#" class="btn btn-info">Check it</a>
+                </div>
+              </div>
+            </div>
+  <div class="col-2">
+            <div class="card">
+            <h5><b>Wednesday</b></h5>
+            <img src="icons/sun.png" class="card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><b>27°C</b></p>
+                  <a href="#" class="btn btn-info">Check it</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+              <h5><b>Thursday</b></h5>
+<img src="icons/sun_less_clouds.png" class="card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"> <b>20°C</b></p>
+                  <a href="#" class="btn btn-info">Check it</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+              <h5><b>For 10 days</b> </h5>
+<img src="icons/sun_less_clouds.png" class="card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><b>?</b></p>
+                  <a href="#" class="btn btn-info">Check it</a>
+                </div>
+              </div>
+            </div>
+
+<p class="footer"> 
+Coded by
+<a href="https://www.instagram.com/tiakacat/" target="_blank">
+<strong>Kateryna Gulenok</strong>
+</a>
+</div>  
+  <script src="src/project.js"></script>
+</body>
+</html>
