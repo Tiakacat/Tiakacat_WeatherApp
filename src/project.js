@@ -8,29 +8,45 @@
 // function showCurrentPosition(position) {
 //   navigator.geolocation.getCurrentPosition(showPosition);
 // }
-
-let now = new Date();
-let date = now.getDate();
-let year = now.getFullYear();
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sept",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-
-let hour = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-let h3 = document.querySelector("h3");
-h3.innerHTML = `${hour} <br> ${date} ${month}, ${year}`;
+function displayDateTime(timestamp) {
+  let date = new Date(timestamp);
+  let actualDate = date.getDate();
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+  let year = date.getFullYear();
+  return `${day} ${hours}:${minutes} <br> ${actualDate} ${month} ${year}`;
+}
 
 function showWeather(response) {
   let cityRequest = document.querySelector("#city");
@@ -45,6 +61,8 @@ function showWeather(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#precipation");
   humidity.innerHTML = response.data.main.humidity;
+  let dateNow = document.querySelector("#date");
+  dateNow.innerHTML = displayDateTime(response.data.dt * 1000);
 }
 
 function userSearch(event) {
@@ -81,6 +99,8 @@ function getCurrentLocation(event) {
 }
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+findCity("Kyiv");
 
 function changeToCelcius(event) {
   event.preventDefault();
