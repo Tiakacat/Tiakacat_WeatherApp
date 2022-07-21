@@ -54,6 +54,57 @@ function showWeather(response) {
 
   let dateNow = document.querySelector("#date");
   dateNow.innerHTML = displayDateTime(response.data.dt * 1000);
+
+  let iconActualElement = document.querySelector("#icon-actual");
+  // let description = document.querySelector("#description");
+  // description.innerHTML = response.data.weather[0].main;
+  let iconActualElementAPI = response.data.weather[0].icon;
+
+  if (iconActualElementAPI === "01d") {
+    iconActualElement.setAttribute("src", `icons/01d.png`);
+  } else if (iconActualElementAPI === "02d") {
+    iconActualElement.setAttribute("src", `icons/02d.png`);
+  } else if (iconActualElementAPI === "03d") {
+    iconActualElement.setAttribute("src", `icons/03d.png`);
+  } else if (iconActualElementAPI === "04d") {
+    iconActualElement.setAttribute("src", `icons/03d.png`);
+  } else if (iconActualElementAPI === "09d") {
+    iconActualElement.setAttribute("src", `icons/09d.png`);
+  } else if (iconActualElementAPI === "10d") {
+    iconActualElement.setAttribute("src", `icons/10d.png`);
+  } else if (iconActualElementAPI === "11d") {
+    iconActualElement.setAttribute("src", `icons/11d.png`);
+  } else if (iconActualElementAPI === "13d") {
+    iconActualElement.setAttribute("src", `icons/13d.png`);
+  } else if (iconActualElementAPI === "50d") {
+    iconActualElement.setAttribute("src", `icons/50d.png`);
+  } else if (iconActualElementAPI === "01n") {
+    iconActualElement.setAttribute("src", `icons/01n.png`);
+  } else if (iconActualElementAPI === "02n") {
+    iconActualElement.setAttribute("src", `icons/02n.png`);
+  } else if (iconActualElementAPI === "03n") {
+    iconActualElement.setAttribute("src", `icons/03d.png`);
+  } else if (iconActualElementAPI === "04n") {
+    iconActualElement.setAttribute("src", `icons/03d.png`);
+  } else if (iconActualElementAPI === "09n") {
+    iconActualElement.setAttribute("src", `icons/09d.png`);
+  } else if (iconActualElementAPI === "10n") {
+    iconActualElement.setAttribute("src", `icons/10d.png`);
+  } else if (iconActualElementAPI === "11n") {
+    iconActualElement.setAttribute("src", `icons/11d.png`);
+  } else if (iconActualElementAPI === "13n") {
+    iconActualElement.setAttribute("src", `icons/13d.png`);
+  } else if (iconActualElementAPI === "50n") {
+    iconActualElement.setAttribute("src", `icons/50d.png`);
+  } else {
+    iconActualElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${iconActualElementAPI}@2x.png`
+    );
+  }
+
+  iconActualElement.setAttribute("src", `icons/${iconActualElementAPI}.png`);
+  iconActualElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function userSearch(event) {
@@ -90,32 +141,32 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 findCity("Kyiv");
 
-function changeToCelcius(event) {
-  event.preventDefault();
-  let tempCelciusDay = document.querySelector("#temp-day");
-  let tempCelciusNight = document.querySelector("#temp-night");
-  tempCelciusDay.innerHTML = "21";
-  tempCelciusNight.innerHTML = "15";
-}
+// function changeToCelcius(event) {
+//   event.preventDefault();
+//   let tempCelciusDay = document.querySelector("#temp-day");
+//   let tempCelciusNight = document.querySelector("#temp-night");
+//   tempCelciusDay.innerHTML = "21";
+//   tempCelciusNight.innerHTML = "15";
+// }
 
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", changeToCelcius);
+// let celciusLink = document.querySelector("#celcius-link");
+// celciusLink.addEventListener("click", changeToCelcius);
 
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  let tempFahrenheitDay = document.querySelector("#temp-day");
-  let tempFahrenheitNight = document.querySelector("#temp-night");
-  tempFahrenheitDay.innerHTML = "70";
-  tempFahrenheitNight.innerHTML = "59";
+// function changeToFahrenheit(event) {
+//   event.preventDefault();
+//   let tempFahrenheitDay = document.querySelector("#temp-day");
+//   let tempFahrenheitNight = document.querySelector("#temp-night");
+//   tempFahrenheitDay.innerHTML = "70";
+//   tempFahrenheitNight.innerHTML = "59";
 
-  // let fahrenheitDay = tempFahrenheitDay.innerHTML;
-  // let fahrenheitNight = tempFahrenheitNight.innerHTML;
-  // tempFahrenheitDay.innerHTML = Math.round((fahrenheitDay * 9) / 5 + 32);
-  // tempFahrenheitNight.innerHTML = Math.round((fahrenheitNight * 9) / 5 + 32;
-}
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeToFahrenheit);
+// let fahrenheitDay = tempFahrenheitDay.innerHTML;
+// let fahrenheitNight = tempFahrenheitNight.innerHTML;
+// tempFahrenheitDay.innerHTML = Math.round((fahrenheitDay * 9) / 5 + 32);
+//   // tempFahrenheitNight.innerHTML = Math.round((fahrenheitNight * 9) / 5 + 32;
+// }
+// let fahrenheitLink = document.querySelector("#fahrenheit-link");
+// fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 // let convertDegree =
 // let celciusTemperature = Math.round(temperature);
-// let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
+// let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32); }
