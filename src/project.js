@@ -51,9 +51,7 @@ function showWeather(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#precipation");
   humidity.innerHTML = response.data.main.humidity;
-  let iconActual = document.querySelector("#icon-actual");
-  iconActual.innerHTML = 
-  
+
   let dateNow = document.querySelector("#date");
   dateNow.innerHTML = displayDateTime(response.data.dt * 1000);
 }
@@ -91,8 +89,6 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 findCity("Kyiv");
-
-
 
 function changeToCelcius(event) {
   event.preventDefault();
