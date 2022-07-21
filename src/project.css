@@ -40,6 +40,16 @@ h5 {
   color: #66bfbf;
   font-size: 1rem;
 }
+.cityData .active {
+  color: rgba(20, 101, 90, 0.8);
+  cursor: default;
+}
+a {
+  text-decoration: none;
+  color: #f76b8a;
+  font-size: 11px;
+}
+
 .additional {
   font-size: 28px;
   color: #f76b8a;
@@ -103,10 +113,4 @@ h5 {
   color: #063634;
   font-size: 12px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: #f76b8a;
-  font-size: 11px;
 }

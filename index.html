@@ -28,18 +28,18 @@
         placeholder="Enter the city"
         autofocus="on"
         autocomplete="off"
-        class="form-control shadow-sm" />
+        class="form-control shadow w=100" />
   </div>
   <div class="col-2">
         <button 
         type="submit" 
         value="Let's find" 
-        class="form-control btn btn-info shadow-sm">Let's find
+        class="form-control btn btn-info shadow w=100">Let's find
       </button>
       </div>
       <div class="col-3">
         <button 
-        class="btn btn-outline-info shadow-sm w-90" 
+        class="btn btn-outline-info shadow w=100" 
         id="current-location-button">Current</button>
       </div>
       </form>
@@ -48,14 +48,13 @@
 <div class="dataContainer">
 <div class="myCity">
    <h2 id="city"></h2>
-   <h3><span id="time"></span></h3>
    <h3> <span id="date"></span></h3>
 </div>   
   <div class="cityData">
-   <h5><b>TEMPERATURE: <span id="temp-day">21</span>° /
-    <span id="temp-night">15</span>°
-     <a href="#" id="celcius-link">C</a> /
-     <a href="#" id="fahrenheit-link">F</a></b></h5>
+   <h5><b>TEMPERATURE:</b> <span id="temp-day">21</span> /
+    <span id="temp-night">15</span>
+     <a href="#" id="celcius-link" class="active">°C</a> /
+     <a href="#" id="fahrenheit-link">°F</a></h5>
     <p> <img src="icons/temperature.png" width="40px"></p> 
   </div>
   <div class="cityData">
@@ -64,8 +63,7 @@
       src="" 
       id="icon-actual"  
       alt="Clear" 
-      width="40px"> 
-    </p>
+      width="40px"> </p>
 </div>
 <div class="cityData">
     <h5> <b>WIND: </b>:<br> <span id="wind"></span> km/h</h5>

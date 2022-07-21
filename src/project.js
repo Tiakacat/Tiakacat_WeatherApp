@@ -43,8 +43,8 @@ function showWeather(response) {
   cityRequest.innerHTML = response.data.name;
   let cityDayTemp = document.querySelector("#temp-day");
   let cityNightTemp = document.querySelector("#temp-night");
-  cityDayTemp.innerHTML = Math.round(response.data.main.temp_max);
-  cityNightTemp.innerHTML = Math.round(response.data.main.temp_min);
+  cityDayTemp.innerHTML = Math.round(tempCelciusDay);
+  cityNightTemp.innerHTML = Math.round(tempCelciusNight);
   let skyConditions = document.querySelector("#sky");
   skyConditions.innerHTML = response.data.weather[0].main;
   let wind = document.querySelector("#wind");
@@ -59,6 +59,9 @@ function showWeather(response) {
   // let description = document.querySelector("#description");
   // description.innerHTML = response.data.weather[0].main;
   let iconActualElementAPI = response.data.weather[0].icon;
+
+  tempCelciusDay = response.data.main.temp_max;
+  tempCelciusNight = response.data.main.temp_min;
 
   if (iconActualElementAPI === "01d") {
     iconActualElement.setAttribute("src", `icons/01d.png`);
@@ -109,9 +112,9 @@ function showWeather(response) {
 
 function userSearch(event) {
   event.preventDefault();
-  let cityElement = document.querySelector("#city");
+  // let cityElement = document.querySelector("#city");
   let userCity = document.querySelector("#city-input").value;
-  cityElement.innerHTML = userCity.toUpperCase();
+  // cityElement.innerHTML = userCity.toUpperCase();
 
   findCity(userCity);
 }
@@ -139,34 +142,35 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-findCity("Kyiv");
-
-// function changeToCelcius(event) {
-//   event.preventDefault();
-//   let tempCelciusDay = document.querySelector("#temp-day");
-//   let tempCelciusNight = document.querySelector("#temp-night");
-//   tempCelciusDay.innerHTML = "21";
-//   tempCelciusNight.innerHTML = "15";
-// }
-
-// let celciusLink = document.querySelector("#celcius-link");
-// celciusLink.addEventListener("click", changeToCelcius);
-
-// function changeToFahrenheit(event) {
-//   event.preventDefault();
-//   let tempFahrenheitDay = document.querySelector("#temp-day");
-//   let tempFahrenheitNight = document.querySelector("#temp-night");
-//   tempFahrenheitDay.innerHTML = "70";
-//   tempFahrenheitNight.innerHTML = "59";
-
-// let fahrenheitDay = tempFahrenheitDay.innerHTML;
-// let fahrenheitNight = tempFahrenheitNight.innerHTML;
-// tempFahrenheitDay.innerHTML = Math.round((fahrenheitDay * 9) / 5 + 32);
-//   // tempFahrenheitNight.innerHTML = Math.round((fahrenheitNight * 9) / 5 + 32;
-// }
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-// fahrenheitLink.addEventListener("click", changeToFahrenheit);
-
 // let convertDegree =
 // let celciusTemperature = Math.round(temperature);
 // let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32); }
+
+let tempCelciusDay = null;
+let tempCelciusNight = null;
+
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  let tempDay = document.querySelector("#temp-day");
+  let tempNight = document.querySelector("#temp-night");
+  let tempFahrenheitDay = (tempCelciusDay * 9) / 5 + 32;
+  let tempFahrenheitNight = (tempCelciusNight * 9) / 5 + 32;
+  tempDay.innerHTML = Math.round(tempFahrenheitDay);
+  tempNight.innerHTML = Math.round(tempFahrenheitNight);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", changeToCelcius);
+
+function changeToCelcius(event) {
+  event.preventDefault();
+  let tempDay = document.querySelector("#temp-day");
+  let tempNight = document.querySelector("#temp-night");
+  tempDay.innerHTML = Math.round(tempCelciusDay);
+  tempNight.innerHTML = Math.round(tempCelciusNight);
+}
+
+findCity("Kyiv");
