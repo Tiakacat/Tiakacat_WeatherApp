@@ -151,6 +151,8 @@ let tempCelciusNight = null;
 
 function changeToFahrenheit(event) {
   event.preventDefault();
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let tempDay = document.querySelector("#temp-day");
   let tempNight = document.querySelector("#temp-night");
   let tempFahrenheitDay = (tempCelciusDay * 9) / 5 + 32;

@@ -40,8 +40,9 @@ h5 {
   color: #66bfbf;
   font-size: 1rem;
 }
-.cityData .active {
-  color: rgba(20, 101, 90, 0.8);
+.cityData .active:hover {
+  text-decoration: none;
+  color: #f76b8a;
   cursor: default;
 }
 a {
