@@ -118,8 +118,6 @@ function userSearch(event) {
 
   findCity(userCity);
 }
-let searchCityForm = document.querySelector("#city-search");
-searchCityForm.addEventListener("submit", userSearch);
 
 function findCity(city) {
   let apiKey = "8d79b9c9164b585fda7fb4641293c93a";
@@ -139,15 +137,6 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
-// let convertDegree =
-// let celciusTemperature = Math.round(temperature);
-// let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32); }
-
-let tempCelciusDay = null;
-let tempCelciusNight = null;
 
 function changeToFahrenheit(event) {
   event.preventDefault();
@@ -161,18 +150,29 @@ function changeToFahrenheit(event) {
   tempNight.innerHTML = Math.round(tempFahrenheitNight);
 }
 
+function changeToCelcius(event) {
+  event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let tempDay = document.querySelector("#temp-day");
+  let tempNight = document.querySelector("#temp-night");
+  tempDay.innerHTML = Math.round(tempCelciusDay);
+  tempNight.innerHTML = Math.round(tempCelciusNight);
+}
+
+let tempCelciusDay = null;
+let tempCelciusNight = null;
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", changeToCelcius);
 
-function changeToCelcius(event) {
-  event.preventDefault();
-  let tempDay = document.querySelector("#temp-day");
-  let tempNight = document.querySelector("#temp-night");
-  tempDay.innerHTML = Math.round(tempCelciusDay);
-  tempNight.innerHTML = Math.round(tempCelciusNight);
-}
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let searchCityForm = document.querySelector("#city-search");
+searchCityForm.addEventListener("submit", userSearch);
 
 findCity("Kyiv");
