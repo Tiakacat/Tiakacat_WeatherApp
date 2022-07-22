@@ -39,6 +39,8 @@ function displayDateTime(timestamp) {
 }
 
 function showWeather(response) {
+  let tempCelciusDay = response.data.main.temp_max;
+  let tempCelciusNight = response.data.main.temp_min;
   let cityRequest = document.querySelector("#city");
   cityRequest.innerHTML = response.data.name;
   let cityDayTemp = document.querySelector("#temp-day");
@@ -102,7 +104,7 @@ function showWeather(response) {
   } else {
     iconActualElement.setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${iconActualElementAPI}@2x.png`
+      `https://openweathermap.org/img/wn/${iconActualElementAPI}@2x.png`
     );
   }
 
@@ -160,8 +162,40 @@ function changeToCelcius(event) {
   tempNight.innerHTML = Math.round(tempCelciusNight);
 }
 
-let tempCelciusDay = null;
-let tempCelciusNight = null;
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+<div class="col-2">
+<div class="card">
+<div class = "forecast-date"> <b>${day}</b></div>
+<img 
+src="icons/02d.png" 
+alt=""
+class="card-img-top"
+/>
+<div class="forecast-temp">
+<span class="forecast-temp-max"><b>18°/</b></span>
+<span class="forecast-temp-min"><b>12°C</b></span>
+</div>
+</div>
+</div>
+
+`;
+  });
+
+  forecastHTML = forecastHTML + "</div>";
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// let tempCelciusDay = null;
+// let tempCelciusNight = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
@@ -176,3 +210,4 @@ let searchCityForm = document.querySelector("#city-search");
 searchCityForm.addEventListener("submit", userSearch);
 
 findCity("Kyiv");
+displayForecast();
