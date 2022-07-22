@@ -83,7 +83,7 @@ a {
   text-align: center;
 }
 
-.card-text {
+.card-body {
   text-align: center;
 }
 
@@ -95,6 +95,9 @@ a {
   margin-left: -10px;
 }
 
+.forecast-temp-min {
+  opacity: 50%;
+}
 .main-image {
   border-radius: 8px;
   margin-bottom: 10px;
