@@ -43,8 +43,8 @@ function showWeather(response) {
   cityRequest.innerHTML = response.data.name;
   let cityDayTemp = document.querySelector("#temp-day");
   let cityNightTemp = document.querySelector("#temp-night");
-  cityDayTemp.innerHTML = Math.round(tempCelciusDay);
-  cityNightTemp.innerHTML = Math.round(tempCelciusNight);
+  cityDayTemp.innerHTML = Math.round(response.data.main.temp_max);
+  cityNightTemp.innerHTML = Math.round(response.data.main.temp_min);
   let skyConditions = document.querySelector("#sky");
   skyConditions.innerHTML = response.data.weather[0].main;
   let wind = document.querySelector("#wind");
@@ -70,7 +70,7 @@ function showWeather(response) {
   } else if (iconActualElementAPI === "03d") {
     iconActualElement.setAttribute("src", `icons/03d.png`);
   } else if (iconActualElementAPI === "04d") {
-    iconActualElement.setAttribute("src", `icons/03d.png`);
+    iconActualElement.setAttribute("src", `icons/04d.png`);
   } else if (iconActualElementAPI === "09d") {
     iconActualElement.setAttribute("src", `icons/09d.png`);
   } else if (iconActualElementAPI === "10d") {
@@ -86,19 +86,19 @@ function showWeather(response) {
   } else if (iconActualElementAPI === "02n") {
     iconActualElement.setAttribute("src", `icons/02n.png`);
   } else if (iconActualElementAPI === "03n") {
-    iconActualElement.setAttribute("src", `icons/03d.png`);
+    iconActualElement.setAttribute("src", `icons/03n.png`);
   } else if (iconActualElementAPI === "04n") {
-    iconActualElement.setAttribute("src", `icons/03d.png`);
+    iconActualElement.setAttribute("src", `icons/04n.png`);
   } else if (iconActualElementAPI === "09n") {
-    iconActualElement.setAttribute("src", `icons/09d.png`);
+    iconActualElement.setAttribute("src", `icons/09n.png`);
   } else if (iconActualElementAPI === "10n") {
-    iconActualElement.setAttribute("src", `icons/10d.png`);
+    iconActualElement.setAttribute("src", `icons/10n.png`);
   } else if (iconActualElementAPI === "11n") {
-    iconActualElement.setAttribute("src", `icons/11d.png`);
+    iconActualElement.setAttribute("src", `icons/11n.png`);
   } else if (iconActualElementAPI === "13n") {
-    iconActualElement.setAttribute("src", `icons/13d.png`);
+    iconActualElement.setAttribute("src", `icons/13n.png`);
   } else if (iconActualElementAPI === "50n") {
-    iconActualElement.setAttribute("src", `icons/50d.png`);
+    iconActualElement.setAttribute("src", `icons/50n.png`);
   } else {
     iconActualElement.setAttribute(
       "src",
@@ -223,8 +223,8 @@ function retrieveForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-let tempCelciusDay = null;
-let tempCelciusNight = null;
+// let tempCelciusDay = null;
+// let tempCelciusNight = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
