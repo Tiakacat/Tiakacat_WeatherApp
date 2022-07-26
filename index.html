@@ -10,105 +10,131 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script src="https://kit.fontawesome.com/9dd5b43ce8.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/9dd5b43ce8.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/project.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="container">
-      <h1>THE WEATHER IS NOW <br> <div class= "additional">...so the life is...</div></h1>
-      <br>
-<form id="city-search">
-  <div class="row">
-  <div class="col-4">
-        <input 
-        type="search" 
-        id="city-input" 
-        placeholder="Enter the city"
-        autofocus="on"
-        autocomplete="off"
-        class="form-control shadow w=100" />
-  </div>
-  <div class="col-2">
-        <button 
-        type="submit" 
-        value="Let's find" 
-        class="form-control btn btn-info shadow w=100">Let's find
-      </button>
-      </div>
-      <div class="col-3">
-        <button 
-        class="btn btn-outline-info shadow w=100" 
-        id="current-location-button">Current</button>
-      </div>
+      <h1>
+        THE WEATHER IS NOW <br />
+        <div class="additional">...so the life is...</div>
+      </h1>
+      <br />
+      <form id="city-search">
+        <div class="row">
+          <div class="col-6">
+            <input
+              type="search"
+              id="city-input"
+              placeholder="Enter the city"
+              autofocus="on"
+              autocomplete="off"
+              class="form-control shadow w=100"
+            />
+          </div>
+          <div class="col-2">
+            <button
+              type="submit"
+              value="Let's find"
+              class="form-control btn btn-info shadow w=100"
+            >
+              Let's find
+            </button>
+          </div>
+          <div class="col-4">
+            <button
+              class="btn btn-outline-info shadow"
+              id="current-location-button"
+            >
+              Current
+            </button>
+          </div>
+        </div>
       </form>
-<img src="images/window.jpeg" alt="window view" width="580px" class="main-image"/>
-<br>
+      <img
+        src="images/window.jpeg"
+        alt="window view"
+        width="580px"
+        class="main-image"
+      />
+      <br />
 
-  
-<div class="dataContainer">
-<div class="myCity">
-   <h2 id="city"></h2>
-   <h3> <span id="date"></span></h3>
-</div>   
-<div class="row">
-<div class="col-6">
-  <div class="cityData">
-   <h5><b>TEMPERATURE:</b> <br> <span id="temp-day">21</span> /
-    <span id="temp-night">15</span>
-     <a href="#" id="celcius-link" class="active">°C</a> /
-     <a href="#" id="fahrenheit-link" >°F</a></h5>
-    <p> <img src="icons/temperature.png" width="40px"></p> 
-  </div>
-  </div>
-  <div class="col-6">
-  <div class="cityData">
-    <h5> <b>SKY</b>:<br> <span id="sky"> </span></h5>
-    <p>   <img 
-      src="" 
-      id="icon-actual"  
-      alt="Clear" 
-      width="40px"> </p>
-</div>
-</div>
-</div>
-<div class="row">
- <div class="col-6">
-<div class="cityData">
-    <h5> <b>WIND: </b>:<br> <span id="wind"></span> km/h</h5>
-    <img src="icons/wind.png" width="40px">
-  </div>
-  </div>
-  <div class="col-6">
-  <div class="cityData">
-    <h5> <b>HUMIDITY: </b><br> <span id="precipation"></span>%</h5>
-    <img src="icons/droplets.png" width="43px">
-</div>
-</div>
-</div>
-</div>
+      <div class="dataContainer">
+        <div class="myCity">
+          <h2 id="city"></h2>
+          <h3><span id="date"></span></h3>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="cityData">
+              <h5>
+                <b>TEMPERATURE:</b> <br />
+                <span id="temp-day">21</span> /
+                <span id="temp-night">15</span>
+                <a href="#" id="celcius-link" class="active">°C</a> /
+                <a href="#" id="fahrenheit-link">°F</a>
+              </h5>
+              <p><img src="icons/temperature.png" width="40px" /></p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="cityData">
+              <h5>
+                <b>SKY</b>:<br />
+                <span id="sky"> </span>
+              </h5>
+              <p><img src="" id="icon-actual" alt="Clear" width="40px" /></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="cityData">
+              <h5>
+                <b>WIND: </b>:<br />
+                <span id="wind"></span> km/h
+              </h5>
+              <img src="icons/wind.png" width="40px" />
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="cityData">
+              <h5>
+                <b>HUMIDITY: </b><br />
+                <span id="precipation"></span>%
+              </h5>
+              <img src="icons/droplets.png" width="43px" />
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div class="weather-forecast" id="forecast">
-<div class="row">
-<div class="col-2">
-<div class="card">
-<div class = "forecast-date"> <b>Sunday</b></div>
-<img 
-src="icons/02d.png" 
-alt=""
-class="card-img-top" id="iconForecast"
-/>
-<div class="forecast-temp">
-<span class="forecast-temp-max"><b>18°/</b></span>
-<span class="forecast-temp-min"><b>12°C</b></span>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <div class="weather-forecast" id="forecast">
+        <div class="row">
+          <div class="col-2">
+            <div class="card">
+              <div class="forecast-date"><b>Sunday</b></div>
+              <img
+                src="icons/02d.png"
+                alt=""
+                class="card-img-top"
+                id="iconForecast"
+              />
+              <div class="forecast-temp">
+                <span class="forecast-temp-max"><b>18°/</b></span>
+                <span class="forecast-temp-min"><b>12°C</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<!-- <div class="col-2">
+      <!-- <div class="col-2">
 <div class="card" id="forecast">
 <h5> <b>Monday</b></h5>
 <img src="icons/03d.png" class="card-img-top" />
@@ -164,12 +190,20 @@ class="card-img-top" id="iconForecast"
 </div>
 </div> -->
 
-<p class="footer"> 
-<a href="https://www.github.com/Tiakacat/Tiakacat_WeatherApp/" target="_blank"> Open-source code</a> by
-<a href="https://www.instagram.com/tiakacat/" target="_blank">
-<strong>Kateryna Gulenok</strong>
-</a>
-</div>  
-  <script src="src/project.js"></script>
-</body>
+      <p class="footer">
+        <a
+          href="https://www.github.com/Tiakacat/Tiakacat_WeatherApp/"
+          target="_blank"
+        >
+          Open-source code</a
+        >
+        by
+        <a href="https://www.instagram.com/tiakacat/" target="_blank">
+          <strong>Kateryna Gulenok</strong>
+        </a>
+      </p>
+    </div>
+
+    <script src="src/project.js"></script>
+  </body>
 </html>

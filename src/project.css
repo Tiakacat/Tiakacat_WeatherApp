@@ -69,16 +69,26 @@ a {
 
 .col-2 {
   padding-right: 0px;
-  padding-left: 10px;
+  padding-left: 16px;
+}
+
+.col-4 {
+  padding-left: 11px;
 }
 
 .myCity {
-  padding: 55px 5px 55px 66px;
+  padding: 55px 5px 55px 20px;
   width: 280px;
   text-align: center;
-  margin: 10px 680px 10px -10px;
   width: 230px;
-  text-align: center;
+  margin: 10px 680px 10px 3px;
+  border-radius: 5px;
+  border-width: 1em;
+  border-color: #17a2b8;
+  color: #17a2b8;
+  background-color: transparent;
+  box-shadow: rgba(20, 101, 90, 0.8);
+  box-sizing: border-box;
 }
 
 .cityData {
@@ -97,9 +107,8 @@ a {
 .card {
   box-shadow: rgba(20, 101, 90, 0.8) 0px 2px 2px 0;
 }
-.row {
-  margin-right: -20px;
-  margin-left: -10px;
+.row .cityData {
+  margin: 15px 50px 40px -90px;
 }
 
 .forecast-temp-min {
@@ -115,8 +124,22 @@ a {
 .dataContainer {
   width: 200px;
   float: right;
-  margin-top: -50px;
+  margin-top: -580px;
 }
+form {
+  max-width: 600px;
+}
+
+.row {
+  max-width: 678px;
+  margin-right: -82px;
+  margin-left: 18px;
+}
+
+.col-6 {
+  padding-left: 11px;
+}
+
 .footer {
   display: block;
   text-align: center;
