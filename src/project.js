@@ -110,10 +110,63 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
 
-  let iconForecastElement = document.querySelector("#iconForecast");
-  // let description = document.querySelector("#description");
-  // description.innerHTML = response.data.weather[0].main;
-  // iconForecastElement = forecast.weather[0].icon;
+  // let iconForecastElement = document.querySelector("#iconForecast");
+  // // let description = document.querySelector("#description");
+  // // description.innerHTML = response.data.weather[0].main;
+  // // iconForecastElement = forecast.weather[0].icon;
+  // let iconForecastElementAPI = forecast.weather[0].icon;
+
+  // if (iconForecastElementAPI === "01d") {
+  //   iconForecastElement.setAttribute("src", `icons/01d.png`);
+  // } else if (iconForecastElementAPI === "02d") {
+  //   iconForecastElement.setAttribute("src", `icons/02d.png`);
+  // } else if (iconForecastElementAPI === "03d") {
+  //   iconForecastElement.setAttribute("src", `icons/03d.png`);
+  // } else if (iconForecastElementAPI === "04d") {
+  //   iconForecastElement.setAttribute("src", `icons/04d.png`);
+  // } else if (iconForecastElementAPI === "09d") {
+  //   iconForecastElement.setAttribute("src", `icons/09d.png`);
+  // } else if (iconForecastElementAPI === "10d") {
+  //   iconForecastElement.setAttribute("src", `icons/10d.png`);
+  // } else if (iconForecastElementAPI === "11d") {
+  //   iconForecastElement.setAttribute("src", `icons/11d.png`);
+  // } else if (iconForecastElementAPI === "13d") {
+  //   iconForecastElement.setAttribute("src", `icons/13d.png`);
+  // } else if (iconForecastElementAPI === "50d") {
+  //   iconForecastElement.setAttribute("src", `icons/50d.png`);
+  // } else if (iconForecastElementAPI === "01n") {
+  //   iconForecastElement.setAttribute("src", `icons/01n.png`);
+  // } else if (iconForecastElementAPI === "02n") {
+  //   iconForecastElement.setAttribute("src", `icons/02n.png`);
+  // } else if (iconForecastElementAPI === "03n") {
+  //   iconForecastElement.setAttribute("src", `icons/03n.png`);
+  // } else if (iconForecastElementAPI === "04n") {
+  //   iconForecastElement.setAttribute("src", `icons/04n.png`);
+  // } else if (iconForecastElementAPI === "09n") {
+  //   iconForecastElement.setAttribute("src", `icons/09n.png`);
+  // } else if (iconForecastElementAPI === "10n") {
+  //   iconForecastElement.setAttribute("src", `icons/10n.png`);
+  // } else if (iconForecastElementAPI === "11n") {
+  //   iconForecastElement.setAttribute("src", `icons/11n.png`);
+  // } else if (iconForecastElementAPI === "13n") {
+  //   iconForecastElement.setAttribute("src", `icons/13n.png`);
+  // } else if (iconForecastElementAPI === "50n") {
+  //   iconForecastElement.setAttribute("src", `icons/50n.png`);
+  // } else {
+  //   iconForecastElement.setAttribute(
+  //     "src",
+  //     `https://openweathermap.org/img/wn/${iconForecastElementAPI}@2x.png`
+  //   );
+  // }
+
+  // iconForecastElement.setAttribute(
+  //   "src",
+  //   `icons/${iconForecastElementAPI}.png`
+  // );
+  // iconForecastElement.setAttribute(
+  //   "alt",
+  //   response.data.daily.weather[0].description
+  // );
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -125,7 +178,7 @@ function displayForecast(response) {
 <div class = "forecast-date"> <b>${formatDay(forecastDay.dt)}</b></div>
 <img 
  src="http://openweathermap.org/img/wn/${
-   forecastDay.iconForecastElement
+   forecastDay.iconForecastElementAPI
  }@2x.png"
           alt=""
 class="card-img-top" id="iconForecast"

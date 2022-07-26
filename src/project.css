@@ -15,6 +15,9 @@ body {
   background: #eaf6f6;
   max-height: 1200px;
 }
+.search-weather-now {
+  max-width: 400px;
+}
 h1 {
   top: 0;
   font-size: 34px;
@@ -70,16 +73,20 @@ a {
 }
 
 .myCity {
-  padding: 12px 15px;
+  padding: 55px 5px 55px 66px;
+  width: 280px;
+  text-align: center;
+  margin: 10px 680px 10px -10px;
+  width: 230px;
+  text-align: center;
 }
 
-.myCity,
 .cityData {
-  margin: 10px 680px 10px 50px;
-  border-radius: 5px;
+  margin: 10px 680px 10px -10px;
+  /* border-radius: 5px;
   box-shadow: rgba(20, 101, 90, 0.8) 0px 2px 2px 0;
-  background: white;
-  width: 180px;
+  background: white; */
+  width: 230px;
   text-align: center;
 }
 
