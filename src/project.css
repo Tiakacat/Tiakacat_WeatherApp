@@ -28,14 +28,16 @@ h1 {
   color: #272044;
   border-radius: 3px;
   box-shadow: rgb(53 53 62 / 30%) 0px 2px 8px 0;
-  background: white;
+  background: transparent;
 }
 h2 {
   text-align: center;
 }
 h3 {
   text-align: center;
-  color: #926e71;
+  color: #272044;
+  font-weight: 600px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 h5 {
   text-align: center;
@@ -43,25 +45,32 @@ h5 {
   color: #66bfbf;
   font-size: 1rem;
 }
-.cityData .active:hover {
-  text-decoration: none;
-  color: #f76b8a;
-  cursor: default;
-}
+
 a {
   text-decoration: none;
   color: #f76b8a;
   font-size: 11px;
 }
 
+.cityData .active:hover {
+  text-decoration: none;
+  color: #f76b8a;
+  cursor: default;
+}
+
+.form-control {
+  transition: all 0.5s ease;
+  background: #66bfbf;
+}
+.form-controle:hover {
+  background: #f76b8a;
+}
+
 .additional {
   font-size: 28px;
   color: #f76b8a;
 }
-.btn-outline-secondary {
-  color: rgba(20, 101, 90, 0.8);
-  border-color: rgba(20, 101, 90, 0.8);
-}
+
 .card-img-top {
   width: 50%;
   margin: 0 auto;
@@ -75,20 +84,40 @@ a {
 .col-4 {
   padding-left: 11px;
 }
+.myCity,
+#city {
+  color: #17a2b8;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 500;
+}
 
-.myCity {
-  padding: 55px 5px 55px 20px;
+.cityData,
+#temp-day {
+  color: rgb(33, 33, 33);
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+#temp-night {
+  color: rgb(33, 33, 33);
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 400;
+  opacity: 50%;
+}
+.dataContainer .myCity {
+  padding: -18px 5px 55px 20px;
   width: 280px;
   text-align: center;
   width: 230px;
-  margin: 10px 680px 10px 3px;
+  margin: 60px 680px 10px 3px;
   border-radius: 5px;
-  border-width: 1em;
   border-color: #17a2b8;
   color: #17a2b8;
-  background-color: transparent;
-  box-shadow: rgba(20, 101, 90, 0.8);
-  box-sizing: border-box;
+  box-shadow: rgba(20, 101, 90, 0.8) 0px 2px 2px 0;
+  background: transparent;
 }
 
 .cityData {
@@ -105,14 +134,32 @@ a {
 }
 
 .card {
+  border-radius: 5px;
+  border-color: #17a2b8;
+  border-radius: 5px;
   box-shadow: rgba(20, 101, 90, 0.8) 0px 2px 2px 0;
+  background: transparent;
+  /* margin: 10px 20px 8px 26px; */
 }
+
+.weather-forecast,
+#forecast {
+  margin: 4px 64px 8px -24px;
+}
+
 .row .cityData {
   margin: 15px 50px 40px -90px;
 }
+.forecast-date {
+  text-align: center;
+}
 
+.forecast-temp {
+  text-align: center;
+}
 .forecast-temp-min {
   opacity: 50%;
+  text-align: center;
 }
 .main-image {
   border-radius: 8px;
@@ -129,7 +176,12 @@ a {
 form {
   max-width: 600px;
 }
-
+#celcius-link,
+#fahrenheit-link {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
 .row {
   max-width: 678px;
   margin-right: -82px;
@@ -140,6 +192,10 @@ form {
   padding-left: 11px;
 }
 
+.weather-forecast,
+.row {
+  max-width: 830px;
+}
 .footer {
   display: block;
   text-align: center;

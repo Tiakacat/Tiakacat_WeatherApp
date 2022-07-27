@@ -1,6 +1,6 @@
 function displayDateTime(timestamp) {
   let date = new Date(timestamp);
-  // let actualDate = date.getDate();
+  let actualDate = date.getDate();
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -35,7 +35,7 @@ function displayDateTime(timestamp) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  return `${day} ${hours}:${minutes} <br> ${month} ${year}`;
+  return `${day} ${hours}:${minutes} <br> ${actualDate} ${month} ${year}`;
 }
 
 function formatDay(timestamp) {
@@ -48,7 +48,7 @@ function formatDay(timestamp) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturdy",
+    "Saturday",
   ];
 
   return days[day];
@@ -104,64 +104,64 @@ function changeToCelcius(event) {
   tempNight.innerHTML = Math.round(tempCelciusNight);
 }
 
-function displayForecastIcon(response) {
-  let iconForecastElement = document.querySelector("#iconForecast");
-  let iconForecastElementAPI = response.data.daily.weather[0].icon;
+// function displayForecastIcon(response) {
+//   let iconForecastElement = document.querySelector("#iconForecast");
+//   let iconForecastElementAPI = response.data.daily.weather[0].icon;
 
-  if (iconForecastElementAPI === "01d") {
-    iconForecastElement.setAttribute("src", `icons/01d.png`);
-  } else if (iconForecastElementAPI === "02d") {
-    iconForecastElement.setAttribute("src", `icons/02d.png`);
-  } else if (iconForecastElementAPI === "03d") {
-    iconForecastElement.setAttribute("src", `icons/03d.png`);
-  } else if (iconForecastElementAPI === "04d") {
-    iconForecastElement.setAttribute("src", `icons/04d.png`);
-  } else if (iconForecastElementAPI === "09d") {
-    iconForecastElement.setAttribute("src", `icons/09d.png`);
-  } else if (iconForecastElementAPI === "10d") {
-    iconForecastElement.setAttribute("src", `icons/10d.png`);
-  } else if (iconForecastElementAPI === "11d") {
-    iconForecastElement.setAttribute("src", `icons/11d.png`);
-  } else if (iconForecastElementAPI === "13d") {
-    iconForecastElement.setAttribute("src", `icons/13d.png`);
-  } else if (iconForecastElementAPI === "50d") {
-    iconForecastElement.setAttribute("src", `icons/50d.png`);
-  } else if (iconForecastElementAPI === "01n") {
-    iconForecastElement.setAttribute("src", `icons/01n.png`);
-  } else if (iconForecastElementAPI === "02n") {
-    iconForecastElement.setAttribute("src", `icons/02n.png`);
-  } else if (iconForecastElementAPI === "03n") {
-    iconForecastElement.setAttribute("src", `icons/03n.png`);
-  } else if (iconForecastElementAPI === "04n") {
-    iconForecastElement.setAttribute("src", `icons/04n.png`);
-  } else if (iconForecastElementAPI === "09n") {
-    iconForecastElement.setAttribute("src", `icons/09n.png`);
-  } else if (iconForecastElementAPI === "10n") {
-    iconForecastElement.setAttribute("src", `icons/10n.png`);
-  } else if (iconForecastElementAPI === "11n") {
-    iconForecastElement.setAttribute("src", `icons/11n.png`);
-  } else if (iconForecastElementAPI === "13n") {
-    iconForecastElement.setAttribute("src", `icons/13n.png`);
-  } else if (iconForecastElementAPI === "50n") {
-    iconForecastElement.setAttribute("src", `icons/50n.png`);
-  } else {
-    iconForecastElement.setAttribute(
-      "src",
-      `https://openweathermap.org/img/wn/${iconForecastElementAPI}@2x.png`
-    );
-  }
+//   if (iconForecastElementAPI === "01d") {
+//     iconForecastElement.setAttribute("src", `icons/01d.png`);
+//   } else if (iconForecastElementAPI === "02d") {
+//     iconForecastElement.setAttribute("src", `icons/02d.png`);
+//   } else if (iconForecastElementAPI === "03d") {
+//     iconForecastElement.setAttribute("src", `icons/03d.png`);
+//   } else if (iconForecastElementAPI === "04d") {
+//     iconForecastElement.setAttribute("src", `icons/04d.png`);
+//   } else if (iconForecastElementAPI === "09d") {
+//     iconForecastElement.setAttribute("src", `icons/09d.png`);
+//   } else if (iconForecastElementAPI === "10d") {
+//     iconForecastElement.setAttribute("src", `icons/10d.png`);
+//   } else if (iconForecastElementAPI === "11d") {
+//     iconForecastElement.setAttribute("src", `icons/11d.png`);
+//   } else if (iconForecastElementAPI === "13d") {
+//     iconForecastElement.setAttribute("src", `icons/13d.png`);
+//   } else if (iconForecastElementAPI === "50d") {
+//     iconForecastElement.setAttribute("src", `icons/50d.png`);
+//   } else if (iconForecastElementAPI === "01n") {
+//     iconForecastElement.setAttribute("src", `icons/01n.png`);
+//   } else if (iconForecastElementAPI === "02n") {
+//     iconForecastElement.setAttribute("src", `icons/02n.png`);
+//   } else if (iconForecastElementAPI === "03n") {
+//     iconForecastElement.setAttribute("src", `icons/03n.png`);
+//   } else if (iconForecastElementAPI === "04n") {
+//     iconForecastElement.setAttribute("src", `icons/04n.png`);
+//   } else if (iconForecastElementAPI === "09n") {
+//     iconForecastElement.setAttribute("src", `icons/09n.png`);
+//   } else if (iconForecastElementAPI === "10n") {
+//     iconForecastElement.setAttribute("src", `icons/10n.png`);
+//   } else if (iconForecastElementAPI === "11n") {
+//     iconForecastElement.setAttribute("src", `icons/11n.png`);
+//   } else if (iconForecastElementAPI === "13n") {
+//     iconForecastElement.setAttribute("src", `icons/13n.png`);
+//   } else if (iconForecastElementAPI === "50n") {
+//     iconForecastElement.setAttribute("src", `icons/50n.png`);
+//   } else {
+//     iconForecastElement.setAttribute(
+//       "src",
+//       `https://openweathermap.org/img/wn/${iconForecastElementAPI}@2x.png`
+//     );
+//   }
 
-  iconForecastElement.setAttribute(
-    "src",
-    `icons/${iconForecastElementAPI}.png`
-  );
-  iconForecastElement.setAttribute(
-    "alt",
-    response.data.daily.weather[0].description
-  );
+//   iconForecastElement.setAttribute(
+//     "src",
+//     `icons/${iconForecastElementAPI}.png`
+//   );
+//   iconForecastElement.setAttribute(
+//     "alt",
+//     response.data.daily.weather[0].description
+//   );
 
-  displayForecast(response.data.daily);
-}
+//   displayForecast(response.data.daily);
+// }
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -178,9 +178,7 @@ function displayForecast(response) {
 <div class="card">
 <div class = "forecast-date"> <b>${formatDay(forecastDay.dt)}</b></div>
 <img 
- src="http://openweathermap.org/img/wn/${
-   forecastDay.iconForecastElementAPI
- }@2x.png"
+ src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
           alt=""
 class="card-img-top" id="iconForecast"
 />
@@ -190,7 +188,7 @@ class="card-img-top" id="iconForecast"
         )}°/</b></span>
 <span class="forecast-temp-min"><b>${Math.round(
           forecastDay.temp.min
-        )}°C</b></span>
+        )}°</b></span>
 </div>
 </div>
 </div>
