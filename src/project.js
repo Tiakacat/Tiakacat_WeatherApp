@@ -48,7 +48,7 @@ function formatDay(timestamp) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturdy",
   ];
 
   return days[day];
@@ -104,65 +104,6 @@ function changeToCelcius(event) {
   tempNight.innerHTML = Math.round(tempCelciusNight);
 }
 
-// function displayForecastIcon(response) {
-//   let iconForecastElement = document.querySelector("#iconForecast");
-//   let iconForecastElementAPI = response.data.daily.weather[0].icon;
-
-//   if (iconForecastElementAPI === "01d") {
-//     iconForecastElement.setAttribute("src", `icons/01d.png`);
-//   } else if (iconForecastElementAPI === "02d") {
-//     iconForecastElement.setAttribute("src", `icons/02d.png`);
-//   } else if (iconForecastElementAPI === "03d") {
-//     iconForecastElement.setAttribute("src", `icons/03d.png`);
-//   } else if (iconForecastElementAPI === "04d") {
-//     iconForecastElement.setAttribute("src", `icons/04d.png`);
-//   } else if (iconForecastElementAPI === "09d") {
-//     iconForecastElement.setAttribute("src", `icons/09d.png`);
-//   } else if (iconForecastElementAPI === "10d") {
-//     iconForecastElement.setAttribute("src", `icons/10d.png`);
-//   } else if (iconForecastElementAPI === "11d") {
-//     iconForecastElement.setAttribute("src", `icons/11d.png`);
-//   } else if (iconForecastElementAPI === "13d") {
-//     iconForecastElement.setAttribute("src", `icons/13d.png`);
-//   } else if (iconForecastElementAPI === "50d") {
-//     iconForecastElement.setAttribute("src", `icons/50d.png`);
-//   } else if (iconForecastElementAPI === "01n") {
-//     iconForecastElement.setAttribute("src", `icons/01n.png`);
-//   } else if (iconForecastElementAPI === "02n") {
-//     iconForecastElement.setAttribute("src", `icons/02n.png`);
-//   } else if (iconForecastElementAPI === "03n") {
-//     iconForecastElement.setAttribute("src", `icons/03n.png`);
-//   } else if (iconForecastElementAPI === "04n") {
-//     iconForecastElement.setAttribute("src", `icons/04n.png`);
-//   } else if (iconForecastElementAPI === "09n") {
-//     iconForecastElement.setAttribute("src", `icons/09n.png`);
-//   } else if (iconForecastElementAPI === "10n") {
-//     iconForecastElement.setAttribute("src", `icons/10n.png`);
-//   } else if (iconForecastElementAPI === "11n") {
-//     iconForecastElement.setAttribute("src", `icons/11n.png`);
-//   } else if (iconForecastElementAPI === "13n") {
-//     iconForecastElement.setAttribute("src", `icons/13n.png`);
-//   } else if (iconForecastElementAPI === "50n") {
-//     iconForecastElement.setAttribute("src", `icons/50n.png`);
-//   } else {
-//     iconForecastElement.setAttribute(
-//       "src",
-//       `https://openweathermap.org/img/wn/${iconForecastElementAPI}@2x.png`
-//     );
-//   }
-
-//   iconForecastElement.setAttribute(
-//     "src",
-//     `icons/${iconForecastElementAPI}.png`
-//   );
-//   iconForecastElement.setAttribute(
-//     "alt",
-//     response.data.daily.weather[0].description
-//   );
-
-//   displayForecast(response.data.daily);
-// }
-
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -178,7 +119,7 @@ function displayForecast(response) {
 <div class="card">
 <div class = "forecast-date"> <b>${formatDay(forecastDay.dt)}</b></div>
 <img 
- src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+ src="icons/${forecastDay.weather[0].icon}.png"
           alt=""
 class="card-img-top" id="iconForecast"
 />
@@ -188,7 +129,7 @@ class="card-img-top" id="iconForecast"
         )}°/</b></span>
 <span class="forecast-temp-min"><b>${Math.round(
           forecastDay.temp.min
-        )}°</b></span>
+        )}°C</b></span>
 </div>
 </div>
 </div>
@@ -230,49 +171,6 @@ function showWeather(response) {
 
   tempCelciusDay = response.data.main.temp_max;
   tempCelciusNight = response.data.main.temp_min;
-
-  if (iconActualElementAPI === "01d") {
-    iconActualElement.setAttribute("src", `icons/01d.png`);
-  } else if (iconActualElementAPI === "02d") {
-    iconActualElement.setAttribute("src", `icons/02d.png`);
-  } else if (iconActualElementAPI === "03d") {
-    iconActualElement.setAttribute("src", `icons/03d.png`);
-  } else if (iconActualElementAPI === "04d") {
-    iconActualElement.setAttribute("src", `icons/04d.png`);
-  } else if (iconActualElementAPI === "09d") {
-    iconActualElement.setAttribute("src", `icons/09d.png`);
-  } else if (iconActualElementAPI === "10d") {
-    iconActualElement.setAttribute("src", `icons/10d.png`);
-  } else if (iconActualElementAPI === "11d") {
-    iconActualElement.setAttribute("src", `icons/11d.png`);
-  } else if (iconActualElementAPI === "13d") {
-    iconActualElement.setAttribute("src", `icons/13d.png`);
-  } else if (iconActualElementAPI === "50d") {
-    iconActualElement.setAttribute("src", `icons/50d.png`);
-  } else if (iconActualElementAPI === "01n") {
-    iconActualElement.setAttribute("src", `icons/01n.png`);
-  } else if (iconActualElementAPI === "02n") {
-    iconActualElement.setAttribute("src", `icons/02n.png`);
-  } else if (iconActualElementAPI === "03n") {
-    iconActualElement.setAttribute("src", `icons/03n.png`);
-  } else if (iconActualElementAPI === "04n") {
-    iconActualElement.setAttribute("src", `icons/04n.png`);
-  } else if (iconActualElementAPI === "09n") {
-    iconActualElement.setAttribute("src", `icons/09n.png`);
-  } else if (iconActualElementAPI === "10n") {
-    iconActualElement.setAttribute("src", `icons/10n.png`);
-  } else if (iconActualElementAPI === "11n") {
-    iconActualElement.setAttribute("src", `icons/11n.png`);
-  } else if (iconActualElementAPI === "13n") {
-    iconActualElement.setAttribute("src", `icons/13n.png`);
-  } else if (iconActualElementAPI === "50n") {
-    iconActualElement.setAttribute("src", `icons/50n.png`);
-  } else {
-    iconActualElement.setAttribute(
-      "src",
-      `https://openweathermap.org/img/wn/${iconActualElementAPI}@2x.png`
-    );
-  }
 
   iconActualElement.setAttribute("src", `icons/${iconActualElementAPI}.png`);
   iconActualElement.setAttribute("alt", response.data.weather[0].description);
