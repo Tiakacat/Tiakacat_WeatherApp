@@ -72,37 +72,44 @@
         <div class="row">
           <div class="col-6">
             <div class="cityData">
-              <h5>
-                <b>TEMP:</b> <br />
-                <span id="temp-day">21</span> /
-                <span id="temp-night">15</span>
-                <a href="#" id="celcius-link" class="active">°C</a> /
-                <a href="#" id="fahrenheit-link">°F</a>
-              </h5>
+              <h4><b>TEMP:</b> <br />day/night</h4>
+              <span id="temp-day">21</span>/<span id="temp-night">15</span>
+              <div class="square">
+                <span class="celcius" id="celcius-link">°C</span>
+                <span class="fahrenheit" id="fahrenheit-link">°F</span>
+              </div>
+              <!-- <a href="#" id="celcius-link" class="active">°C</a> /
+                <a href="#" id="fahrenheit-link">°F</a> -->
             </div>
           </div>
           <div class="col-6">
-            <h5>
-              <b>SKY</b>:<br />
-              <span id="sky"> </span>
-            </h5>
-            <p><img src="" id="icon-actual" alt="Clear" width="50px" /></p>
+            <div class="cityData">
+              <h4>
+                <b>SKY</b>:<br />
+                <span id="sky"> </span>
+              </h4>
+              <p><img src="" id="icon-actual" alt="Clear" width="60px" /></p>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-6">
-            <h5>
-              <b>WIND: </b>:<br />
-              <span id="wind"></span> km/h
-            </h5>
-            <img src="icons/wind.png" width="50px" />
+            <div class="cityData">
+              <h4>
+                <b>WIND: </b><br />
+                <span id="wind"></span> km/h
+              </h4>
+              <img src="icons/wind.png" width="60px" />
+            </div>
           </div>
           <div class="col-6">
-            <h5>
-              <b>HUMI: </b><br />
-              <span id="precipation"></span>%
-            </h5>
-            <img src="icons/droplets.png" width="50px" />
+            <div class="cityData">
+              <h4>
+                <b>HUMI: </b><br />
+                <span id="precipation"></span>%
+              </h4>
+              <img src="icons/droplets.png" width="60px" />
+            </div>
           </div>
         </div>
       </div>
