@@ -1,6 +1,6 @@
 function displayDateTime(timestamp) {
   let date = new Date(timestamp);
-  let actualDate = date.getDate();
+  // let actualDate = date.getDate();
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -35,7 +35,7 @@ function displayDateTime(timestamp) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  return `${day} ${hours}:${minutes} <br> ${actualDate} ${month} ${year}`;
+  return `${day} ${hours}:${minutes} <br> ${month} ${year}`;
 }
 
 function formatDay(timestamp) {
@@ -48,7 +48,7 @@ function formatDay(timestamp) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturdy",
   ];
 
   return days[day];
@@ -96,8 +96,8 @@ function changeToFahrenheit(event) {
 
 function changeToCelcius(event) {
   event.preventDefault();
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+  // celciusLink.classList.add("active");
+  // fahrenheitLink.classList.remove("active");
   let tempDay = document.querySelector("#temp-day");
   let tempNight = document.querySelector("#temp-night");
   tempDay.innerHTML = Math.round(tempCelciusDay);
@@ -149,7 +149,7 @@ function retrieveForecast(coordinates) {
 
 function showWeather(response) {
   let cityRequest = document.querySelector("#city");
-  cityRequest.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+  cityRequest.innerHTML = response.data.name;
   let cityDayTemp = document.querySelector("#temp-day");
   let cityNightTemp = document.querySelector("#temp-night");
   cityDayTemp.innerHTML = Math.round(response.data.main.temp_max);
