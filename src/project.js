@@ -96,8 +96,8 @@ function changeToFahrenheit(event) {
 
 function changeToCelcius(event) {
   event.preventDefault();
-  // celciusLink.classList.add("active");
-  // fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let tempDay = document.querySelector("#temp-day");
   let tempNight = document.querySelector("#temp-night");
   tempDay.innerHTML = Math.round(tempCelciusDay);
