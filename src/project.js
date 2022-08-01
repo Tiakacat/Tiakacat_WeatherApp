@@ -1,6 +1,6 @@
 function displayDateTime(timestamp) {
   let date = new Date(timestamp);
-  // let actualDate = date.getDate();
+  let actualDate = date.getDate();
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -35,7 +35,7 @@ function displayDateTime(timestamp) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  return `${day} ${hours}:${minutes} <br> ${month} ${year}`;
+  return `${day} ${hours}:${minutes} <br> ${actualDate} ${month} ${year}`;
 }
 
 function formatDay(timestamp) {
@@ -149,7 +149,7 @@ function retrieveForecast(coordinates) {
 
 function showWeather(response) {
   let cityRequest = document.querySelector("#city");
-  cityRequest.innerHTML = response.data.name;
+  cityRequest.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   let cityDayTemp = document.querySelector("#temp-day");
   let cityNightTemp = document.querySelector("#temp-night");
   cityDayTemp.innerHTML = Math.round(response.data.main.temp_max);

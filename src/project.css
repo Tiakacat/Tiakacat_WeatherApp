@@ -163,7 +163,7 @@ a {
 }
 
 .row .cityData {
-  margin: 15px 50px 40px -90px;
+  margin: 20px 50px 30px -90px;
 }
 .forecast-date,
 .forecast-temp {
@@ -227,14 +227,3 @@ a {
   margin: -2px 22px -29px -3px;
   font-weight: bold;
 }
-/* .square {
-  border-radius: 5px;
-  border-color: #17a2b8;
-  border-radius: 2px;
-  box-shadow: rgba(20, 101, 90, 0.8) 0px 2px 2px 0;
-  background: transparent;
-  width: 50px;
-  height: 30px;
-  margin: -5px 10px 55px 74px;
-  padding: 9px 0px 5px 1px;
-} */
